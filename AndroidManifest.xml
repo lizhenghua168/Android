@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+package 表示整个android应用程序的主要包名，而且是一个默认程序名称
+android:versionCode="1" 表示该工程所生成的apk版本号，1开始2、3、4不断的升级
+android:versionName="1.0" 表示版本的名称，1.0开始，类似2.0往后推
+android:installLocation="auto" 自动寻找安装的地方,ROM或者是SDCard
+internalOnly 仅仅只能安装在ROM
+preferExternal 会直接安装在SDCard
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.android"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="8"/>
+
+    <!--
+        android:icon="@drawable/icon" 表示应用程序的一个图片，比如logo图片
+        android:label="@string/app_name" 表示应用工程的文字说明
+    -->
+    <application android:label="@string/app_name">
+        <!--
+            android:name="MyActivity" 表示应用程序的主程序名称
+            <intent-filter> 意图过滤器：用来过滤用户的一些动作和操作
+
+            android.intent.action.MAIN 表示当前程序的入口
+            android.intent.category.LAUNCHER 表示决定应用程序是否在程序列表中显示
+        -->
+        <activity
+                android:name="MyActivity"
+                android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <!--
+    添加用户授权，如访问网络等
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"></uses-permission>
+    -->
+</manifest>
